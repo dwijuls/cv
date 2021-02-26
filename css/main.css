@@ -336,7 +336,7 @@ a:focus, button:focus, .btn:focus,
 
 #navigation .navbar:after {
     left: 50%;
-    background-color: #3c70b4;
+    background-color: #3861ef;
     right: 0;
     z-index: -1;
 }
