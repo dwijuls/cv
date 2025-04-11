@@ -174,7 +174,7 @@
 								<div class="col-lg-6 pe-lg-4">
 									<div class="clearfix mb-lg-1">
 										<span class="float-start text-dark">Age</span>
-										<span class="float-end">25</span>
+										<span class="float-end" id="age"></span>
 									</div>
 									<div class="clearfix">
 										<span class="float-start text-dark">Residence</span>
@@ -2035,6 +2035,25 @@
 <script src="js/validator.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/custom.js"></script>
+
+<script>
+	function calculateAge(birthdate) {
+		const today = new Date();
+		const birthDate = new Date(birthdate);
+		let age = today.getFullYear() - birthDate.getFullYear();
+		const m = today.getMonth() - birthDate.getMonth();
+
+		if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+			age--;
+		}
+
+		return age;
+	}
+
+	// Example usage:
+	const age = calculateAge('1997-07-13');
+	$('#age').append(age);
+</script>
 
 </body>
 </html>
