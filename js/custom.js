@@ -1,30 +1,57 @@
-$(window).on('load', function() {
+$(document).ready(function() {
     "use strict";   
 
     /*=========================================================================
-        Menu Clicks
+        Menu Clicks & State Persistence (URL Hash & LocalStorage)
     =========================================================================*/
-    // Show the first tab and hide the rest
-    $('.anchor-menu li:first-child a').addClass('active');
-    $('.animated-section:first').addClass('section-visible');
+    function activateSection(targetId) {
+      if (!targetId || targetId === "#" || !$(targetId).length) {
+        targetId = "#home";
+      }
 
-    // Click function
-    $('.anchor-menu li a, a.section-link').on('click', function(){
-      $('.anchor-menu li a').removeClass('active');
-      $(this).addClass('active');
-      $('.animated-section').removeClass('section-visible');
-      
-      var activeTab = $(this).attr('href');
-        $(activeTab).addClass('section-visible');
+      $(".anchor-menu li a").removeClass("active");
+      $('.anchor-menu li a[href="' + targetId + '"]').addClass("active");
+      $(".animated-section").removeClass("section-visible");
+      $(targetId).addClass("section-visible");
+
+      // Save to localStorage and update window location hash
+      try {
+        localStorage.setItem("active_cv_section", targetId);
+        if (history.replaceState) {
+          history.replaceState(null, null, targetId);
+        } else {
+          window.location.hash = targetId;
+        }
+      } catch (e) {}
+    }
+
+    // Determine initial active section on page load / refresh
+    var initialSection = window.location.hash;
+    if (!initialSection || !$(initialSection).length) {
+      try {
+        initialSection = localStorage.getItem("active_cv_section");
+      } catch (e) {}
+    }
+    if (!initialSection || !$(initialSection).length) {
+      initialSection = "#home";
+    }
+
+    activateSection(initialSection);
+
+    // Click function for menu navigation & internal section links
+    $(".anchor-menu li a, a.section-link").on("click", function(e) {
+      e.preventDefault();
+      var activeTab = $(this).attr("href");
+      activateSection(activeTab);
       return false;
     });
 
-    if(window.location.hash) {
-        $('.animated-section').removeClass('section-visible');
-        $(window.location.hash).addClass('section-visible');
-    } else {
-        
-    }
+    // Listen to hash changes (e.g. browser back/forward buttons)
+    $(window).on("hashchange", function() {
+      if (window.location.hash) {
+        activateSection(window.location.hash);
+      }
+    });
 
     /*=========================================================================
         Preloader
