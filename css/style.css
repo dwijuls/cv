@@ -2581,8 +2581,9 @@ body {
 
 .fast-wrapper {
   position: fixed;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
 }
 
 .fast-checkbox {
@@ -2590,163 +2591,207 @@ body {
 }
 
 .fast {
-  position: absolute;
-  bottom: -2rem;
-  right: -2rem;
-  width: 4rem;
-  height: 4rem;
-  background: #3b84a3;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
   border-radius: 50%;
-  background: #3b84a3;
-  box-shadow: 0px 5px 20px #3b84a3;
-  transition: all 0.3s ease;
-  z-index: 1;
-  border-bottom-right-radius: 6px;
-  border: 1px solid #3b84a3;
-}
-
-.fast:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.fast-checkbox:checked~.fast:before {
-  width: 90%;
-  height: 90%;
-  left: 5%;
-  top: 5%;
-  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5), 0 0 15px rgba(99, 102, 241, 0.3);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  user-select: none;
 }
 
 .fast:hover {
-  background: #cacaca;
-  box-shadow: 0px 5px 20px 5px #cacaca;
+  transform: scale(1.08);
+  box-shadow: 0 14px 30px -4px rgba(99, 102, 241, 0.65), 0 0 20px rgba(99, 102, 241, 0.45);
+}
+
+.fast-checkbox:checked ~ .fast {
+  transform: rotate(90deg);
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.5), 0 0 15px rgba(239, 68, 68, 0.3);
 }
 
 .fast-dots {
   position: absolute;
-  height: 8px;
-  width: 8px;
-  background-color: white;
+  height: 6px;
+  width: 6px;
+  background-color: #ffffff;
   border-radius: 50%;
   top: 50%;
-  transform: translateX(0%) translateY(-50%) rotate(0deg);
+  transform: translateY(-50%);
   opacity: 1;
-  animation: blink 3s ease infinite;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fast-dots-1 {
-  left: 15px;
-  animation-delay: 0s;
+  left: 16px;
 }
 
 .fast-dots-2 {
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  animation-delay: 0.4s;
+  transform: translate(-50%, -50%);
 }
 
 .fast-dots-3 {
-  right: 15px;
-  animation-delay: 0.8s;
+  right: 16px;
 }
 
-.fast-checkbox:checked~.fast .fast-dots {
-  height: 6px;
+/* Morph dots into 'X' when open */
+.fast-checkbox:checked ~ .fast .fast-dots {
+  height: 3px;
+  background-color: #ffffff;
 }
 
-.fast .fast-dots-2 {
-  transform: translateX(-50%) translateY(-50%) rotate(0deg);
-}
-
-.fast-checkbox:checked~.fast .fast-dots-1 {
-  width: 32px;
-  border-radius: 10px;
+.fast-checkbox:checked ~ .fast .fast-dots-1 {
+  width: 24px;
+  border-radius: 4px;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.fast-checkbox:checked~.fast .fast-dots-3 {
-  width: 32px;
-  border-radius: 10px;
+.fast-checkbox:checked ~ .fast .fast-dots-2 {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.fast-checkbox:checked ~ .fast .fast-dots-3 {
+  width: 24px;
+  border-radius: 4px;
   right: 50%;
-  transform: translateX(50%) translateY(-50%) rotate(-45deg);
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0.25;
-  }
-}
-
-.fast-checkbox:checked~.fast .fast-dots {
-  animation: none;
+  transform: translate(50%, -50%) rotate(-45deg);
 }
 
 .fast-wheel {
   position: absolute;
   bottom: 0;
   right: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 10rem;
-  height: 10rem;
-  transition: all 0.3s ease;
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: bottom right;
   transform: scale(0);
+  opacity: 0;
 }
 
-.fast-checkbox:checked~.fast-wheel {
+.fast-checkbox:checked ~ .fast-wheel {
+  pointer-events: auto;
   transform: scale(1);
+  opacity: 1;
 }
 
 .fast-action {
   position: absolute;
-  background: #fef5d9;
-  width: 3rem;
-  height: 3rem;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9d9ca5;
-  box-shadow: 0 0.1rem 1rem rgb(254 245 217);
-  transition: all 1s ease;
-  opacity: 0;
-}
-
-.fast-checkbox:checked~.fast-wheel .fast-action {
-  opacity: 1;
+  font-size: 18px;
+  text-decoration: none !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fast-action:hover {
-  background-color: #cacaca;
+  transform: scale(1.15) !important;
 }
 
+/* Individual modern button styles */
+.action-share {
+  background: rgba(99, 102, 241, 0.85);
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+  border-color: rgba(165, 180, 252, 0.3);
+}
+.action-share:hover {
+  background: #6366f1;
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.6);
+}
+
+.action-call {
+  background: rgba(56, 189, 248, 0.85);
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+  border-color: rgba(186, 230, 253, 0.3);
+}
+.action-call:hover {
+  background: #0284c7;
+  box-shadow: 0 12px 25px rgba(56, 189, 248, 0.6);
+}
+
+.action-wa {
+  background: rgba(37, 211, 102, 0.9);
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+  border-color: rgba(187, 247, 208, 0.3);
+}
+.action-wa:hover {
+  background: #22c55e;
+  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.7);
+}
+
+/* Radial positions around the main button */
 .fast-wheel .fast-action-1 {
-  right: -1rem;
-  top: 2.5rem;
+  bottom: 12px;
+  right: 76px;
 }
 
 .fast-wheel .fast-action-2 {
-  right: 3.2rem;
-  top: 4.2rem;
+  bottom: 64px;
+  right: 64px;
 }
 
 .fast-wheel .fast-action-3 {
-  left: 2.8rem;
-  bottom: -1.3rem;
+  bottom: 76px;
+  right: 12px;
 }
 
-.fast-wheel .fast-action-4 {
-  left: 0;
-  bottom: -1rem;
+/* Tooltip on hover */
+.action-tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  background: rgba(15, 23, 42, 0.9);
+  color: #f8fafc;
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.fast-action:hover .action-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media only screen and (max-width: 767px) {
+  .fast-wrapper {
+    bottom: 20px;
+    right: 20px;
+  }
+  .action-tooltip {
+    display: none; /* Hide tooltips on mobile touch */
+  }
 }
 
 /* === Aesthetic Slate Glass Palette (Safe Override) === */
