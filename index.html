@@ -62,9 +62,13 @@
 	<header class="mobile-header">
 		<!-- menu icon -->
 		<div class="menu-icon">
-			<button>
+			<button aria-label="Toggle Menu">
 				<span></span>
 			</button>
+		</div>
+		<div class="mobile-brand d-flex align-items-center ms-3">
+			<img src="assets/images/avatar.png" alt="Krisnadi" class="rounded-circle me-2" style="width: 34px; height: 34px; object-fit: cover; border: 2px solid rgba(99, 102, 241, 0.4);">
+			<span style="font-weight: 700; color: #f8fafc; font-size: 15px; letter-spacing: -0.3px;">Krisnadi</span>
 		</div>
 	</header>
 
@@ -256,46 +260,61 @@
 
 					<div class="row gy-4">
 						<div class="col-md-4">
-							<div class="bg-white rounded p-4 h-100 shadow-sm">
-								<h4 class="mb-3"><i class="ti-mobile text-primary me-2"></i> Mobile Engineering</h4>
-								<div class="d-flex flex-wrap gap-2">
-									<span class="badge bg-light text-dark border p-2">Flutter</span>
-									<span class="badge bg-light text-dark border p-2">Dart</span>
-									<span class="badge bg-light text-dark border p-2">BLoC / Cubit</span>
-									<span class="badge bg-light text-dark border p-2">Provider / GetX</span>
-									<span class="badge bg-light text-dark border p-2">Clean Architecture</span>
-									<span class="badge bg-light text-dark border p-2">RESTful API Integration</span>
-									<span class="badge bg-light text-dark border p-2">Firebase / Push Notif</span>
-									<span class="badge bg-light text-dark border p-2">Performance Profiling</span>
+							<div class="skill-category-card h-100">
+								<div class="skill-card-header">
+									<div class="skill-icon-box skill-icon-mobile">
+										<i class="ti-mobile"></i>
+									</div>
+									<h4 class="skill-category-title">Mobile Engineering</h4>
+								</div>
+								<div class="skill-badge-group">
+									<span class="tech-badge tech-badge-mobile"><span class="badge-dot"></span>Flutter</span>
+									<span class="tech-badge tech-badge-mobile"><span class="badge-dot"></span>Dart</span>
+									<span class="tech-badge tech-badge-mobile"><span class="badge-dot"></span>BLoC / Cubit</span>
+									<span class="tech-badge tech-badge-mobile"><span class="badge-dot"></span>Provider / GetX</span>
+									<span class="tech-badge tech-badge-mobile"><span class="badge-dot"></span>Clean Architecture</span>
+									<span class="tech-badge tech-badge-mobile"><span class="badge-dot"></span>RESTful API</span>
+									<span class="tech-badge tech-badge-mobile"><span class="badge-dot"></span>Firebase / FCM</span>
+									<span class="tech-badge tech-badge-mobile"><span class="badge-dot"></span>Performance Profiling</span>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="bg-white rounded p-4 h-100 shadow-sm">
-								<h4 class="mb-3"><i class="ti-world text-primary me-2"></i> Web & Full Stack</h4>
-								<div class="d-flex flex-wrap gap-2">
-									<span class="badge bg-light text-dark border p-2">React.js / Vite</span>
-									<span class="badge bg-light text-dark border p-2">TypeScript / JS</span>
-									<span class="badge bg-light text-dark border p-2">SvelteKit</span>
-									<span class="badge bg-light text-dark border p-2">Tailwind CSS</span>
-									<span class="badge bg-light text-dark border p-2">PHP (Laravel / CI)</span>
-									<span class="badge bg-light text-dark border p-2">Angular CLI / PWA</span>
-									<span class="badge bg-light text-dark border p-2">MySQL / PostgreSQL</span>
-									<span class="badge bg-light text-dark border p-2">Git / CI/CD DevOps</span>
+							<div class="skill-category-card h-100">
+								<div class="skill-card-header">
+									<div class="skill-icon-box skill-icon-web">
+										<i class="ti-world"></i>
+									</div>
+									<h4 class="skill-category-title">Web & Full Stack</h4>
+								</div>
+								<div class="skill-badge-group">
+									<span class="tech-badge tech-badge-web"><span class="badge-dot"></span>React.js / Vite</span>
+									<span class="tech-badge tech-badge-web"><span class="badge-dot"></span>TypeScript / JS</span>
+									<span class="tech-badge tech-badge-web"><span class="badge-dot"></span>SvelteKit</span>
+									<span class="tech-badge tech-badge-web"><span class="badge-dot"></span>Tailwind CSS</span>
+									<span class="tech-badge tech-badge-web"><span class="badge-dot"></span>PHP (Laravel / CI)</span>
+									<span class="tech-badge tech-badge-web"><span class="badge-dot"></span>Angular CLI / PWA</span>
+									<span class="tech-badge tech-badge-web"><span class="badge-dot"></span>MySQL / PostgreSQL</span>
+									<span class="tech-badge tech-badge-web"><span class="badge-dot"></span>Git / CI/CD DevOps</span>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="bg-white rounded p-4 h-100 shadow-sm" style="border-color: rgba(99, 102, 241, 0.35) !important;">
-								<h4 class="mb-3"><i class="ti-light-bulb text-primary me-2" style="color: #38bdf8 !important;"></i> AI & Emerging Tech</h4>
-								<div class="d-flex flex-wrap gap-2">
-									<span class="badge bg-light text-dark border p-2" style="border-color: rgba(56, 189, 248, 0.4) !important; color: #38bdf8 !important;">LLM & OpenAI API</span>
-									<span class="badge bg-light text-dark border p-2" style="border-color: rgba(56, 189, 248, 0.4) !important; color: #38bdf8 !important;">Gemini API Integration</span>
-									<span class="badge bg-light text-dark border p-2">AI Chat Assistant / Agent</span>
-									<span class="badge bg-light text-dark border p-2">Text-to-Speech (TTS)</span>
-									<span class="badge bg-light text-dark border p-2">Prompt Engineering</span>
-									<span class="badge bg-light text-dark border p-2">AI-Driven UI Automation</span>
-									<span class="badge bg-light text-dark border p-2">Function Calling / Tools</span>
+							<div class="skill-category-card skill-card-ai h-100">
+								<div class="skill-card-header">
+									<div class="skill-icon-box skill-icon-ai">
+										<i class="ti-light-bulb"></i>
+									</div>
+									<h4 class="skill-category-title">AI & Emerging Tech</h4>
+								</div>
+								<div class="skill-badge-group">
+									<span class="tech-badge tech-badge-ai"><span class="badge-dot"></span>LLM & OpenAI API</span>
+									<span class="tech-badge tech-badge-ai"><span class="badge-dot"></span>Gemini API</span>
+									<span class="tech-badge tech-badge-ai"><span class="badge-dot"></span>AI Assistant / Agent</span>
+									<span class="tech-badge tech-badge-ai"><span class="badge-dot"></span>Text-to-Speech (TTS)</span>
+									<span class="tech-badge tech-badge-ai"><span class="badge-dot"></span>Prompt Engineering</span>
+									<span class="tech-badge tech-badge-ai"><span class="badge-dot"></span>UI Automation</span>
+									<span class="tech-badge tech-badge-ai"><span class="badge-dot"></span>Function Calling / Tools</span>
 								</div>
 							</div>
 						</div>
@@ -423,22 +442,22 @@
 
 					<div class="spacer" data-height="50"></div>
 
-					<!-- portfolio filter (web) -->
-					<ul class="portfolio-filter list-inline">
-						<li class="current list-inline-item" data-filter="*">All Projects</li>
-						<li class="list-inline-item" data-filter=".flutter">Flutter Apps</li>
-						<li class="list-inline-item" data-filter=".website">Website</li>
-						<li class="list-inline-item" data-filter=".pwa">Angular Cli Apps</li>
-					</ul>
-					
-					<!-- portfolio filter (mobile) -->
-					<div class="pf-filter-wrapper">
-						<select class="portfolio-filter-mobile">
-							<option value="*">All Projects</option>
-							<option value=".flutter">Flutter Apps</option>
-							<option value=".website">Website</option>
-							<option value=".pwa">Angular Cli PWA</option>
-						</select>
+					<!-- portfolio filter tabs (desktop & responsive mobile swipe pills) -->
+					<div class="portfolio-filter-container">
+						<ul class="portfolio-filter list-inline">
+							<li class="current list-inline-item" data-filter="*">
+								<i class="ti-layout-grid2 me-1"></i> All Projects
+							</li>
+							<li class="list-inline-item" data-filter=".flutter">
+								<i class="ti-mobile me-1"></i> Flutter Apps
+							</li>
+							<li class="list-inline-item" data-filter=".website">
+								<i class="ti-world me-1"></i> Web & Corporate
+							</li>
+							<li class="list-inline-item" data-filter=".pwa">
+								<i class="ti-panel me-1"></i> Angular CLI / PWA
+							</li>
+						</ul>
 					</div>
 					
 					<!-- portolio wrapper -->
