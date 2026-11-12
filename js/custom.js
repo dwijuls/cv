@@ -470,4 +470,22 @@ $(function(){
 
       $('.section-inner').each((index, element) => new SimpleBar(element), { autoHide: false });
 
+    /*=========================================================================
+        Live Dynamic PDF CV Generator (Executive Recruiter Standard)
+    =========================================================================*/
+    function printLiveCV() {
+      // Temporarily mark document for clean print styling
+      $('body').addClass('printing-live-cv');
+      
+      // Ensure all sections are unhidden for print capture
+      window.print();
+      
+      $('body').removeClass('printing-live-cv');
+    }
+
+    $('#downloadCvBtn, #downloadCvContactBtn').on('click', function(e) {
+      e.preventDefault();
+      printLiveCV();
+    });
+
 });

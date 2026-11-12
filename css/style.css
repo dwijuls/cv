@@ -3979,3 +3979,423 @@ section#home.section-visible {
     height: 50px !important;
   }
 }
+
+/* ================================================================= */
+/*        EXECUTIVE RECRUITER PRINT & LIVE CV PDF STYLING            */
+/* ================================================================= */
+@media print {
+  /* Set A4 page margins and clean background printing */
+  @page {
+    size: A4 portrait;
+    margin: 10mm 14mm;
+  }
+
+  *, *:before, *:after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* CRITICAL: Unconstrain height and remove overflow clipping from wrappers */
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    background: #ffffff !important;
+    color: #1e293b !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .site-wrapper,
+  main.content,
+  .simplebar-wrapper,
+  .simplebar-mask,
+  .simplebar-offset,
+  .simplebar-content-wrapper,
+  .simplebar-content,
+  .section-inner,
+  .container-fluid,
+  section.animated-section {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    filter: none !important;
+    float: none !important;
+  }
+
+  .simplebar-track,
+  .simplebar-scrollbar {
+    display: none !important;
+  }
+  #preloader,
+  #cursor-outer,
+  #ball,
+  .mobile-header,
+  .mobile-bottom-nav,
+  .fast-wrapper,
+  .portfolio-filter-container,
+  .portfolio-filter,
+  .mfp-hide,
+  .spacer,
+  .hero-action-buttons,
+  .mobile-hero-image-wrapper,
+  #downloadCvBtn,
+  a[href*="drive.google.com"],
+  .social-icons,
+  .footer,
+  .card-arrow,
+  .nav-btn,
+  header.header nav,
+  header.header .footer {
+    display: none !important;
+  }
+
+  .site-wrapper {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+  }
+
+  /* Executive Print Header */
+  header.header {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 16px 20px !important;
+    margin-bottom: 20px !important;
+    page-break-after: avoid;
+  }
+
+  header.header .site-logo {
+    display: flex !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 16px !important;
+  }
+
+  .brand-badge-wrapper {
+    margin: 0 !important;
+  }
+
+  .brand-monogram-lg {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 24px !important;
+    background: #4f46e5 !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
+    border: none !important;
+  }
+
+  .status-online-dot {
+    display: none !important;
+  }
+
+  header.header .site-logo .name {
+    color: #0f172a !important;
+    font-size: 22pt !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  header.header .site-logo .slogan {
+    color: #4f46e5 !important;
+    font-size: 12pt !important;
+    font-weight: 600 !important;
+    display: block !important;
+  }
+
+  main.content {
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Unhide All Core Sections in clean linear layout */
+  section.animated-section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 0 20px 0 !important;
+    background-image: none !important;
+    overflow: visible !important;
+    page-break-inside: auto;
+  }
+
+  /* Hide Hero Section redundant copy to make CV ultra-sharp and executive */
+  section#home {
+    display: none !important;
+  }
+
+  .section-inner {
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  .section-title {
+    color: #0f172a !important;
+    font-size: 15pt !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #4f46e5 !important;
+    padding-bottom: 4px !important;
+    margin-bottom: 12px !important;
+    margin-top: 18px !important;
+    page-break-after: avoid;
+  }
+
+  .title-badge {
+    display: none !important;
+  }
+
+  .about-pic {
+    display: none !important;
+  }
+
+  .about-info {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .about-info .rounded {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+    padding: 12px !important;
+  }
+
+  .about-info p {
+    color: #334155 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.6 !important;
+  }
+
+  .text-dark {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+  }
+
+  .text-muted {
+    color: #475569 !important;
+  }
+
+  /* Technical Skills Cards in Print */
+  .skill-category-card {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    margin-bottom: 10px !important;
+  }
+
+  .skill-category-card::before {
+    display: none !important;
+  }
+
+  .skill-card-header {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .skill-category-title {
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+  }
+
+  .skill-icon-box {
+    display: none !important;
+  }
+
+  .tech-badge {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    font-size: 9pt !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+  }
+
+  .badge-dot {
+    display: none !important;
+  }
+
+  /* Resume & Experience Section */
+  .resume-item {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 3px solid #4f46e5 !important;
+    border-radius: 6px !important;
+    padding: 12px 14px !important;
+    margin-bottom: 12px !important;
+    page-break-inside: avoid;
+  }
+
+  .resume-item span.time {
+    background: #e0e7ff !important;
+    color: #4338ca !important;
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    border: none !important;
+  }
+
+  .resume-item h4.title {
+    color: #0f172a !important;
+    font-size: 12pt !important;
+    font-weight: 700 !important;
+    margin: 6px 0 2px 0 !important;
+  }
+
+  .resume-item h6 {
+    color: #475569 !important;
+    font-size: 10pt !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .resume-item ul {
+    color: #334155 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .resume-item ul li strong {
+    color: #0f172a !important;
+  }
+
+  /* Portfolio Section in Print (Clean Recruiter Showcase) */
+  .portfolio-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin: 0 !important;
+  }
+
+  .portfolio-wrapper > div[class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .portfolio-item {
+    page-break-inside: avoid;
+    margin-bottom: 0 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    padding: 8px !important;
+    background: #f8fafc !important;
+  }
+
+  .portfolio-item .thumb {
+    margin-bottom: 6px !important;
+  }
+
+  .portfolio-item .thumb img {
+    height: 110px !important;
+    max-height: 110px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 4px !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  .portfolio-item .mask,
+  .portfolio-item .more-button {
+    display: none !important;
+  }
+
+  .portfolio-item .details {
+    display: block !important;
+    position: static !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    padding: 4px 0 !important;
+  }
+
+  .portfolio-item .details h4.title {
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    margin: 0 0 2px 0 !important;
+  }
+
+  .portfolio-item .details span.term {
+    color: #4f46e5 !important;
+    font-size: 8.5pt !important;
+    font-weight: 600 !important;
+    display: block !important;
+  }
+
+  /* Contact Information Section in Print */
+  .contact-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    page-break-inside: avoid;
+  }
+
+  .modern-contact-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
+    padding: 10px 14px !important;
+  }
+
+  .modern-contact-card .card-label {
+    color: #64748b !important;
+    font-size: 8.5pt !important;
+  }
+
+  .modern-contact-card .card-title {
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    font-weight: 600 !important;
+  }
+
+  .modern-contact-card .card-value {
+    color: #334155 !important;
+    font-size: 9pt !important;
+  }
+}
