@@ -67,20 +67,23 @@
 			</button>
 		</div>
 		<div class="mobile-brand d-flex align-items-center ms-3">
-			<img src="assets/images/avatar.png" alt="Krisnadi" class="rounded-circle me-2" style="width: 34px; height: 34px; object-fit: cover; border: 2px solid rgba(99, 102, 241, 0.4);">
-			<span style="font-weight: 700; color: #f8fafc; font-size: 15px; letter-spacing: -0.3px;">Krisnadi</span>
+			<div class="brand-monogram me-2">K</div>
+			<div>
+				<div style="font-weight: 700; color: #f8fafc; font-size: 15px; letter-spacing: -0.3px; line-height: 1.2;">Krisnadi</div>
+				<div style="font-size: 11px; color: #818cf8; font-weight: 500;">Lead Engineer</div>
+			</div>
 		</div>
 	</header>
 
 	<!-- desktop header -->
 	<header class="header d-flex align-content-between flex-wrap">
 		
-		<!-- logo image -->
+		<!-- logo brand (clean & minimal, no redundant avatar) -->
 		<div class="site-logo">
-			<a href="#" class="avatar">
-				<img src="assets/images/avatar.png" alt="Krisnadi" />
-				<span class="avatar-tooltip">I'm available ready to work!</span>
-			</a>
+			<div class="brand-badge-wrapper">
+				<div class="brand-monogram-lg">K</div>
+				<span class="status-online-dot" title="Available for opportunities"></span>
+			</div>
 			<h2 class="name">Krisnadi</h2>
 			<span class="slogan">Lead Frontend & Mobile Engineer</span>
 		</div>
@@ -137,6 +140,12 @@
 					<h1 class="mb-4 mt-3">I'm Krisnadi.</h1>
 					<p class="mb-4">Lead Frontend & Mobile Engineer specializing in Flutter, React, and modern web architectures with extensive expertise in AI integration & intelligent assistant workflows. Proven experience shipping high-scale POS ecosystems, automotive solutions, and enterprise digital platforms.</p>
 
+					<!-- action buttons (positioned before photo on mobile so they are immediately visible) -->
+					<div class="hero-action-buttons mt-4">
+						<a href="#contact" class="section-link btn btn-default me-3">Hire Me</a>
+						<a href="#works" class="section-link btn btn-text btn-icon">View Works<i class="ti-arrow-right"></i></a>
+					</div>
+
 					<!-- mobile hero image card -->
 					<div class="mobile-hero-image-wrapper">
 						<div class="mobile-hero-avatar-frame">
@@ -147,11 +156,6 @@
 						</div>
 					</div>
 
-					<!-- buttons -->
-					<div class="mt-4">
-						<a href="#contact" class="section-link btn btn-default me-3">Hire Me</a>
-						<a href="#works" class="section-link btn btn-text btn-icon">View Works<i class="ti-arrow-right"></i></a>
-					</div>
 				</div>
 
 			</div>
@@ -1868,6 +1872,43 @@
 	</main>
 
 </div>
+
+<!-- Floating Mobile Bottom Navigation Bar (Glassmorphic) -->
+<nav class="mobile-bottom-nav">
+	<ul class="mobile-nav-menu anchor-menu">
+		<li>
+			<a href="#home">
+				<i class="ti-home"></i>
+				<span>Home</span>
+			</a>
+		</li>
+		<li>
+			<a href="#about">
+				<i class="ti-user"></i>
+				<span>About</span>
+			</a>
+		</li>
+		<li>
+			<a href="#experience">
+				<i class="ti-briefcase"></i>
+				<span>Exp</span>
+			</a>
+		</li>
+		<li>
+			<a href="#works">
+				<i class="ti-package"></i>
+				<span>Works</span>
+			</a>
+		</li>
+		<li>
+			<a href="#contact">
+				<i class="ti-comment"></i>
+				<span>Contact</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+
 <div class="fast-wrapper">
 	<input id="fastCheckbox" type="checkbox" class="fast-checkbox" />
 	<label class="fast" for="fastCheckbox" title="Quick Connect & Share" aria-label="Quick Connect & Share">
