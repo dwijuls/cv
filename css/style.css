@@ -3681,3 +3681,170 @@ section#home.section-visible {
     padding: 20px 18px;
   }
 }
+
+/* ================================================================= */
+/*             HERO IMAGE RESPONSIVE SCALING (DESKTOP & MOBILE)      */
+/* ================================================================= */
+/* Desktop: background image on #home section */
+section#home.section-visible {
+  display: flex !important;
+  background-position: right bottom !important;
+  background-repeat: no-repeat !important;
+  background-size: auto 90% !important;
+}
+
+@media only screen and (min-width: 1400px) {
+  section#home.section-visible {
+    background-size: auto 90% !important;
+    background-position: right 20px bottom !important;
+  }
+}
+
+@media only screen and (min-width: 1171px) and (max-width: 1399px) {
+  section#home.section-visible {
+    background-size: auto 80% !important;
+    background-position: right bottom !important;
+  }
+}
+
+/* Hide mobile inline hero image on desktop / laptop */
+.mobile-hero-image-wrapper {
+  display: none;
+}
+
+/* Show sleek responsive hero card on mobile & tablet */
+@media only screen and (max-width: 1170px) {
+  section#home.hero {
+    background-image: none !important; /* Hide intrusive desktop background image on mobile */
+  }
+
+  .mobile-hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0 28px 0;
+    width: 100%;
+  }
+
+  .mobile-hero-avatar-frame {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(56, 189, 248, 0.25), rgba(168, 85, 247, 0.3));
+    box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.6), 0 0 25px rgba(99, 102, 241, 0.35);
+  }
+
+  .mobile-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    border: 3px solid rgba(15, 23, 42, 0.95);
+    background: #0f172a;
+    display: block;
+  }
+
+  .hero-status-pill {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    color: #f1f5f9;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .status-indicator-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px #22c55e;
+    display: inline-block;
+  }
+}
+
+/* ================================================================= */
+/*            HERO ACTION BUTTONS (HIRE ME & VIEW WORKS)             */
+/* ================================================================= */
+.hero .intro .btn-default {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 20px -4px rgba(99, 102, 241, 0.5) !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 12px 28px !important;
+  border-radius: 30px !important;
+}
+
+.hero .intro .btn-default:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 26px -2px rgba(99, 102, 241, 0.65) !important;
+  color: #ffffff !important;
+}
+
+/* Modern Pill Style for View Works */
+.hero .intro .btn-text,
+.btn-text {
+  color: #e2e8f0 !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 12px 26px !important;
+  border-radius: 30px !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+}
+
+.hero .intro .btn-text i,
+.btn-text i {
+  color: #38bdf8 !important;
+  position: static !important;
+  transition: transform 0.25s ease !important;
+  font-size: 13px !important;
+}
+
+.hero .intro .btn-text:hover,
+.btn-text:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.2) !important;
+}
+
+.hero .intro .btn-text:hover i,
+.btn-text:hover i {
+  transform: translateX(4px) !important;
+  color: #38bdf8 !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .mobile-hero-avatar-frame {
+    width: 180px;
+    height: 180px;
+  }
+}
